@@ -1,0 +1,44 @@
+{
+    "name": "silverstripe/installer",
+    "type": "silverstripe-recipe",
+    "description": "The SilverStripe Framework Installer",
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "silverstripe/recipe-plugin": "^1.2",
+        "silverstripe/recipe-cms": "~4.10.0@beta",
+        "silverstripe-themes/simple": "~3.2.0",
+        "silverstripe/login-forms": "~4.6.0@beta",
+        "silverstripe/graphql": "4.0.0-alpha3",
+        "silverstripe/silverstripe-nextjs": "dev-main"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "silverstripe/graphql-devtools": "1.x-dev"
+    },
+    "extra": {
+        "resources-dir": "_resources",
+        "project-files-installed": [
+            "app/.htaccess",
+            "app/_config.php",
+            "app/_config/mimevalidator.yml",
+            "app/_config/mysite.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "index.php",
+            "web.config"
+        ]
+    },
+    "config": {
+        "process-timeout": 600
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/src/"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
