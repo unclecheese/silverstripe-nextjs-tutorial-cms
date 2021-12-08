@@ -1,0 +1,6 @@
+---
+Name: app-headless
+---
+SilverStripe\Headless\GraphQL\ModelLoader:
+  included_dataobjects:
+    - App\Models\*

@@ -30,22 +30,34 @@ class Types extends AbstractTypeRegistry
     public static function PageInfo() { return static::get('PageInfo'); }
     public static function DBFileComposite() { return static::get('DBFileComposite'); }
     public static function DBPolymorphicForeignKeyComposite() { return static::get('DBPolymorphicForeignKeyComposite'); }
-    public static function PageFilterFields() { return static::get('PageFilterFields'); }
+    public static function ContactPageFilterFields() { return static::get('ContactPageFilterFields'); }
     public static function SiteTreeFilterFields() { return static::get('SiteTreeFilterFields'); }
     public static function GroupFilterFields() { return static::get('GroupFilterFields'); }
-    public static function PageSortFields() { return static::get('PageSortFields'); }
+    public static function PageFilterFields() { return static::get('PageFilterFields'); }
+    public static function ContactPageSortFields() { return static::get('ContactPageSortFields'); }
     public static function SiteTreeSortFields() { return static::get('SiteTreeSortFields'); }
     public static function GroupSortFields() { return static::get('GroupSortFields'); }
-    public static function PageInterfaceConnectionEdge() { return static::get('PageInterfaceConnectionEdge'); }
-    public static function PageInterfaceConnection() { return static::get('PageInterfaceConnection'); }
+    public static function PageSortFields() { return static::get('PageSortFields'); }
+    public static function ContactPageInterfaceConnectionEdge() { return static::get('ContactPageInterfaceConnectionEdge'); }
+    public static function ContactPageInterfaceConnection() { return static::get('ContactPageInterfaceConnection'); }
     public static function SiteTreeInterfaceConnectionEdge() { return static::get('SiteTreeInterfaceConnectionEdge'); }
     public static function SiteTreeInterfaceConnection() { return static::get('SiteTreeInterfaceConnection'); }
+    public static function HomePageFilterFields() { return static::get('HomePageFilterFields'); }
+    public static function ImageFilterFields() { return static::get('ImageFilterFields'); }
     public static function FileFilterFields() { return static::get('FileFilterFields'); }
     public static function MemberFilterFields() { return static::get('MemberFilterFields'); }
     public static function FileLinkFilterFields() { return static::get('FileLinkFilterFields'); }
+    public static function HomePageSortFields() { return static::get('HomePageSortFields'); }
+    public static function ImageSortFields() { return static::get('ImageSortFields'); }
     public static function FileSortFields() { return static::get('FileSortFields'); }
     public static function MemberSortFields() { return static::get('MemberSortFields'); }
     public static function FileLinkSortFields() { return static::get('FileLinkSortFields'); }
+    public static function HomePageInterfaceConnectionEdge() { return static::get('HomePageInterfaceConnectionEdge'); }
+    public static function HomePageInterfaceConnection() { return static::get('HomePageInterfaceConnection'); }
+    public static function ImageInterfaceConnectionEdge() { return static::get('ImageInterfaceConnectionEdge'); }
+    public static function ImageInterfaceConnection() { return static::get('ImageInterfaceConnection'); }
+    public static function PageInterfaceConnectionEdge() { return static::get('PageInterfaceConnectionEdge'); }
+    public static function PageInterfaceConnection() { return static::get('PageInterfaceConnection'); }
     public static function FileInterfaceConnectionEdge() { return static::get('FileInterfaceConnectionEdge'); }
     public static function FileInterfaceConnection() { return static::get('FileInterfaceConnection'); }
     public static function FileLinkConnectionEdge() { return static::get('FileLinkConnectionEdge'); }
@@ -54,24 +66,22 @@ class Types extends AbstractTypeRegistry
     public static function FolderSortFields() { return static::get('FolderSortFields'); }
     public static function FolderInterfaceConnectionEdge() { return static::get('FolderInterfaceConnectionEdge'); }
     public static function FolderInterfaceConnection() { return static::get('FolderInterfaceConnection'); }
-    public static function ImageFilterFields() { return static::get('ImageFilterFields'); }
-    public static function ImageSortFields() { return static::get('ImageSortFields'); }
-    public static function ImageInterfaceConnectionEdge() { return static::get('ImageInterfaceConnectionEdge'); }
-    public static function ImageInterfaceConnection() { return static::get('ImageInterfaceConnection'); }
     public static function SiteConfigFilterFields() { return static::get('SiteConfigFilterFields'); }
     public static function SiteConfigSortFields() { return static::get('SiteConfigSortFields'); }
     public static function SiteConfigConnectionEdge() { return static::get('SiteConfigConnectionEdge'); }
     public static function SiteConfigConnection() { return static::get('SiteConfigConnection'); }
     public static function GroupConnectionEdge() { return static::get('GroupConnectionEdge'); }
     public static function GroupConnection() { return static::get('GroupConnection'); }
-    public static function Page() { return static::get('Page'); }
+    public static function ContactPage() { return static::get('ContactPage'); }
     public static function SiteTree() { return static::get('SiteTree'); }
     public static function Group() { return static::get('Group'); }
+    public static function HomePage() { return static::get('HomePage'); }
+    public static function Image() { return static::get('Image'); }
+    public static function Page() { return static::get('Page'); }
     public static function File() { return static::get('File'); }
     public static function Member() { return static::get('Member'); }
     public static function FileLink() { return static::get('FileLink'); }
     public static function Folder() { return static::get('Folder'); }
-    public static function Image() { return static::get('Image'); }
     public static function SiteConfig() { return static::get('SiteConfig'); }
     public static function Query() { return static::get('Query'); }
     public static function VersionedStage() { return static::get('VersionedStage'); }
@@ -92,6 +102,8 @@ class Types extends AbstractTypeRegistry
     public static function DataObject() { return static::get('DataObject'); }
     public static function SiteTreeInterface() { return static::get('SiteTreeInterface'); }
     public static function PageInterface() { return static::get('PageInterface'); }
+    public static function ContactPageInterface() { return static::get('ContactPageInterface'); }
+    public static function HomePageInterface() { return static::get('HomePageInterface'); }
     public static function FileInterface() { return static::get('FileInterface'); }
     public static function FolderInterface() { return static::get('FolderInterface'); }
     public static function ImageInterface() { return static::get('ImageInterface'); }

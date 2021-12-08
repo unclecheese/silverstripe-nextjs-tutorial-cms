@@ -92,6 +92,12 @@ class ParentClassEnum extends EnumType
                         'Page' => [
                     'value' => 'Page',
                                 ],
+                        'AppModelsContactPage' => [
+                    'value' => 'App\\Models\\ContactPage',
+                                ],
+                        'AppModelsHomePage' => [
+                    'value' => 'App\\Models\\HomePage',
+                                ],
                         'SilverStripeErrorPageErrorPage' => [
                     'value' => 'SilverStripe\\ErrorPage\\ErrorPage',
                                 ],
