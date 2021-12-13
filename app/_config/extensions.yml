@@ -1,0 +1,6 @@
+---
+Name: app-extensions
+---
+App\Models\BlockPage:
+  extensions:
+    elemental: DNADesign\Elemental\Extensions\ElementalPageExtension

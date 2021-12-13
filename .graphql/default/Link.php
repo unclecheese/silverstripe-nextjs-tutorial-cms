@@ -6,19 +6,16 @@ namespace SSGraphQLSchema_c21f969b5f03d33d43e04f8f136e7682;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\InputObjectType;
 use SilverStripe\GraphQL\Schema\Resolver\ComposedResolver;
-class HomePage extends ObjectType{
+class Link extends ObjectType{
     public function __construct()
     {
         parent::__construct([
-            'name' => 'HomePage',
+            'name' => 'Link',
                             'interfaces' => function () {
                 return array_map(function ($interface) {
                     return call_user_func([__NAMESPACE__ . '\\Types', $interface]);
                 }, array (
   0 => 'DataObject',
-  1 => 'SiteTreeInterface',
-  2 => 'PageInterface',
-  3 => 'HomePageInterface',
 ));
             },
         'fields' => function () {
@@ -221,61 +218,7 @@ class HomePage extends ObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'canViewType',
-                        'type' => Types::CanViewTypeEnum(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'canEditType',
-                        'type' => Types::CanEditTypeEnum(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'version',
-                        'type' => Types::Int(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'urlSegment',
+                        'name' => 'anchor',
                         'type' => Types::String(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -311,7 +254,7 @@ class HomePage extends ObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'menuTitle',
+                        'name' => 'type',
                         'type' => Types::String(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -325,12 +268,11 @@ class HomePage extends ObjectType{
                                                             ]; // field
                                                         $resolverInst =     ComposedResolver::create([
             ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\DBFieldArgs\DBHTMLTextArgs', 'resolve'],
             ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
         ])
 ;
                     $fields[] = [
-                        'name' => 'content',
+                        'name' => 'url',
                         'type' => Types::String(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -338,35 +280,17 @@ class HomePage extends ObjectType{
                                     ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
                                 ],
                                                             [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\DBFieldArgs\DBHTMLTextArgs', 'resolve'],
-                                ],
-                                                            [
                                     ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
                                 ],
                                                     ],
-                                                                'args' => [
-                                                    [
-                                'name' => 'format',
-                                'type' => Types::DBTextFormattingOption(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'limit',
-                                'type' => Types::Int(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'parseShortcodes',
-                                'type' => Types::Boolean(),
-                                                        ], // arg
-                                                ], // args
-                                        ]; // field
+                                                            ]; // field
                                                         $resolverInst =     ComposedResolver::create([
             ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\DBFieldArgs\DBTextArgs', 'resolve'],
             ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
         ])
 ;
                     $fields[] = [
-                        'name' => 'metaDescription',
+                        'name' => 'email',
                         'type' => Types::String(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -374,31 +298,17 @@ class HomePage extends ObjectType{
                                     ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
                                 ],
                                                             [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\DBFieldArgs\DBTextArgs', 'resolve'],
-                                ],
-                                                            [
                                     ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
                                 ],
                                                     ],
-                                                                'args' => [
-                                                    [
-                                'name' => 'format',
-                                'type' => Types::DBTextFormattingOption(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'limit',
-                                'type' => Types::Int(),
-                                                        ], // arg
-                                                ], // args
-                                        ]; // field
+                                                            ]; // field
                                                         $resolverInst =     ComposedResolver::create([
             ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\DBFieldArgs\DBHTMLTextArgs', 'resolve'],
             ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
         ])
 ;
                     $fields[] = [
-                        'name' => 'extraMeta',
+                        'name' => 'phone',
                         'type' => Types::String(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -406,34 +316,17 @@ class HomePage extends ObjectType{
                                     ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
                                 ],
                                                             [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\DBFieldArgs\DBHTMLTextArgs', 'resolve'],
-                                ],
-                                                            [
                                     ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
                                 ],
                                                     ],
-                                                                'args' => [
-                                                    [
-                                'name' => 'format',
-                                'type' => Types::DBTextFormattingOption(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'limit',
-                                'type' => Types::Int(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'parseShortcodes',
-                                'type' => Types::Boolean(),
-                                                        ], // arg
-                                                ], // args
-                                        ]; // field
+                                                            ]; // field
                                                         $resolverInst =     ComposedResolver::create([
             ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
             ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
         ])
 ;
                     $fields[] = [
-                        'name' => 'showInMenus',
+                        'name' => 'openInNewWindow',
                         'type' => Types::Boolean(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -451,61 +344,7 @@ class HomePage extends ObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'showInSearch',
-                        'type' => Types::Boolean(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'sort',
-                        'type' => Types::Int(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'parentID',
-                        'type' => Types::nonNull(Types::ID()),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'bannerText',
+                        'name' => 'selectedStyle',
                         'type' => Types::String(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -523,7 +362,7 @@ class HomePage extends ObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'bannerImageID',
+                        'name' => 'siteTreeID',
                         'type' => Types::nonNull(Types::ID()),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -541,7 +380,25 @@ class HomePage extends ObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'parent',
+                        'name' => 'fileID',
+                        'type' => Types::nonNull(Types::ID()),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
+                                ],
+                                                            [
+                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
+                                ],
+                                                    ],
+                                                            ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
+            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
+        ])
+;
+                    $fields[] = [
+                        'name' => 'siteTree',
                         'type' => Types::SiteTreeInterface(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -559,308 +416,12 @@ class HomePage extends ObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'bannerImage',
-                        'type' => Types::ImageInterface(),
+                        'name' => 'file',
+                        'type' => Types::FileInterface(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
                                     ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\QueryFilter\QueryFilter', 'filter'], [array (
-  'fieldName' => 'filter',
-  'rootType' => 'Group',
-)]),
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\QuerySort', 'sort'], [array (
-  'fieldName' => 'sort',
-  'rootType' => 'Group',
-)]),
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\Paginator', 'paginate'], [array (
-  'maxLimit' => 100,
-)]),
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\CanViewPermission', 'permissionCheck'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'viewerGroups',
-                        'type' => Types::nonNull(Types::GroupConnection()),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\QueryFilter\QueryFilter', 'filter'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\QuerySort', 'sort'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\Paginator', 'paginate'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\CanViewPermission', 'permissionCheck'],
-                                ],
-                                                    ],
-                                                                'args' => [
-                                                    [
-                                'name' => 'filter',
-                                'type' => Types::GroupFilterFields(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'sort',
-                                'type' => Types::GroupSortFields(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'limit',
-                                'type' => Types::Int(),
-                                                            'defaultValue' => '100',
-                                                        ], // arg
-                                                    [
-                                'name' => 'offset',
-                                'type' => Types::Int(),
-                                                            'defaultValue' => '0',
-                                                        ], // arg
-                                                ], // args
-                                        ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\QueryFilter\QueryFilter', 'filter'], [array (
-  'fieldName' => 'filter',
-  'rootType' => 'Group',
-)]),
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\QuerySort', 'sort'], [array (
-  'fieldName' => 'sort',
-  'rootType' => 'Group',
-)]),
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\Paginator', 'paginate'], [array (
-  'maxLimit' => 100,
-)]),
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\CanViewPermission', 'permissionCheck'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'editorGroups',
-                        'type' => Types::nonNull(Types::GroupConnection()),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\QueryFilter\QueryFilter', 'filter'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\QuerySort', 'sort'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\Paginator', 'paginate'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\CanViewPermission', 'permissionCheck'],
-                                ],
-                                                    ],
-                                                                'args' => [
-                                                    [
-                                'name' => 'filter',
-                                'type' => Types::GroupFilterFields(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'sort',
-                                'type' => Types::GroupSortFields(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'limit',
-                                'type' => Types::Int(),
-                                                            'defaultValue' => '100',
-                                                        ], // arg
-                                                    [
-                                'name' => 'offset',
-                                'type' => Types::Int(),
-                                                            'defaultValue' => '0',
-                                                        ], // arg
-                                                ], // args
-                                        ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\QueryFilter\QueryFilter', 'filter'], [array (
-  'fieldName' => 'filter',
-  'rootType' => 'Page',
-)]),
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\QuerySort', 'sort'], [array (
-  'fieldName' => 'sort',
-  'rootType' => 'Page',
-)]),
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\CanViewPermission', 'permissionCheck'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'breadcrumbs',
-                        'type' => Types::nonNull(Types::listOf(Types::nonNull(Types::PageInterface()))),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\QueryFilter\QueryFilter', 'filter'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\QuerySort', 'sort'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\CanViewPermission', 'permissionCheck'],
-                                ],
-                                                    ],
-                                                                'args' => [
-                                                    [
-                                'name' => 'filter',
-                                'type' => Types::PageFilterFields(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'sort',
-                                'type' => Types::PageSortFields(),
-                                                        ], // arg
-                                                ], // args
-                                        ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\QueryFilter\QueryFilter', 'filter'], [array (
-  'fieldName' => 'filter',
-  'rootType' => 'Page',
-)]),
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\QuerySort', 'sort'], [array (
-  'fieldName' => 'sort',
-  'rootType' => 'Page',
-)]),
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\Paginator', 'paginate'], [array (
-  'maxLimit' => 100,
-)]),
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\CanViewPermission', 'permissionCheck'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'children',
-                        'type' => Types::nonNull(Types::PageInterfaceConnection()),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\QueryFilter\QueryFilter', 'filter'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\QuerySort', 'sort'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\Paginator', 'paginate'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\CanViewPermission', 'permissionCheck'],
-                                ],
-                                                    ],
-                                                                'args' => [
-                                                    [
-                                'name' => 'filter',
-                                'type' => Types::PageFilterFields(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'sort',
-                                'type' => Types::PageSortFields(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'limit',
-                                'type' => Types::Int(),
-                                                            'defaultValue' => '100',
-                                                        ], // arg
-                                                    [
-                                'name' => 'offset',
-                                'type' => Types::Int(),
-                                                            'defaultValue' => '0',
-                                                        ], // arg
-                                                ], // args
-                                        ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\QueryFilter\QueryFilter', 'filter'], [array (
-  'fieldName' => 'filter',
-  'rootType' => 'Page',
-)]),
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\QuerySort', 'sort'], [array (
-  'fieldName' => 'sort',
-  'rootType' => 'Page',
-)]),
-            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\Plugin\Paginator', 'paginate'], [array (
-  'maxLimit' => 100,
-)]),
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\CanViewPermission', 'permissionCheck'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'navChildren',
-                        'type' => Types::nonNull(Types::PageInterfaceConnection()),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\QueryFilter\QueryFilter', 'filter'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\QuerySort', 'sort'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\Paginator', 'paginate'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\CanViewPermission', 'permissionCheck'],
-                                ],
-                                                    ],
-                                                                'args' => [
-                                                    [
-                                'name' => 'filter',
-                                'type' => Types::PageFilterFields(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'sort',
-                                'type' => Types::PageSortFields(),
-                                                        ], // arg
-                                                    [
-                                'name' => 'limit',
-                                'type' => Types::Int(),
-                                                            'defaultValue' => '100',
-                                                        ], // arg
-                                                    [
-                                'name' => 'offset',
-                                'type' => Types::Int(),
-                                                            'defaultValue' => '0',
-                                                        ], // arg
-                                                ], // args
-                                        ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\Headless\GraphQL\ModelLoader', 'ensurePage'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'navParent',
-                        'type' => Types::PageInterface(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\Headless\GraphQL\ModelLoader', 'ensurePage'],
                                 ],
                                                             [
                                     ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
@@ -874,8 +435,8 @@ class HomePage extends ObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'link',
-                        'type' => Types::nonNull(Types::String()),
+                        'name' => 'linkURL',
+                        'type' => Types::String(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -899,6 +460,56 @@ class HomePage extends ObjectType{
                                                         ], // arg
                                                 ], // args
                                         ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
+            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\DBFieldArgs\DBTextArgs', 'resolve'],
+            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
+        ])
+;
+                    $fields[] = [
+                        'name' => 'layout',
+                        'type' => Types::String(),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
+                                ],
+                                                            [
+                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\DBFieldArgs\DBTextArgs', 'resolve'],
+                                ],
+                                                            [
+                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
+                                ],
+                                                    ],
+                                                                'args' => [
+                                                    [
+                                'name' => 'format',
+                                'type' => Types::DBTextFormattingOption(),
+                                                        ], // arg
+                                                    [
+                                'name' => 'limit',
+                                'type' => Types::Int(),
+                                                        ], // arg
+                                                ], // args
+                                        ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
+            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
+        ])
+;
+                    $fields[] = [
+                        'name' => 'template',
+                        'type' => Types::String(),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
+                                ],
+                                                            [
+                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
+                                ],
+                                                    ],
+                                                            ]; // field
                                 return $fields;
             },
         ]);

@@ -5,7 +5,7 @@
 namespace SSGraphQLSchema_c21f969b5f03d33d43e04f8f136e7682;
 use GraphQL\Type\Definition\InterfaceType;
 use SilverStripe\GraphQL\Schema\Resolver\ComposedResolver;
-class ContactPageInterface extends InterfaceType
+class BlockPageInterface extends InterfaceType
 {
     public function __construct()
     {
@@ -14,7 +14,7 @@ class ContactPageInterface extends InterfaceType
         ])
 ;
         parent::__construct([
-            'name' => 'ContactPageInterface',
+            'name' => 'BlockPageInterface',
             'resolveType' => function (...$args) use ($resolver) {
                 $type = call_user_func_array($resolver->toClosure(), $args);
                 return call_user_func([__NAMESPACE__ . '\\Types', $type]);
@@ -190,32 +190,16 @@ class ContactPageInterface extends InterfaceType
                         'type' => Types::nonNull(Types::ID()),
                                                             ],
                                     [
-                        'name' => 'bannerText',
-                        'type' => Types::String(),
-                                                            ],
-                                    [
-                        'name' => 'bannerImageID',
+                        'name' => 'elementalAreaID',
                         'type' => Types::nonNull(Types::ID()),
-                                                            ],
-                                    [
-                        'name' => 'phoneNumber',
-                        'type' => Types::String(),
-                                                            ],
-                                    [
-                        'name' => 'emailAddress',
-                        'type' => Types::String(),
-                                                            ],
-                                    [
-                        'name' => 'physicalAddress',
-                        'type' => Types::String(),
                                                             ],
                                     [
                         'name' => 'parent',
                         'type' => Types::SiteTreeInterface(),
                                                             ],
                                     [
-                        'name' => 'bannerImage',
-                        'type' => Types::ImageInterface(),
+                        'name' => 'elementalArea',
+                        'type' => Types::ElementalArea(),
                                                             ],
                                     [
                         'name' => 'viewerGroups',

@@ -8,7 +8,7 @@ use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 
-class ContactPage extends Page
+class ContactPage extends ContentPage
 {
     /**
      * @var array

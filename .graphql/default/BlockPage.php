@@ -6,11 +6,11 @@ namespace SSGraphQLSchema_c21f969b5f03d33d43e04f8f136e7682;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\InputObjectType;
 use SilverStripe\GraphQL\Schema\Resolver\ComposedResolver;
-class ContactPage extends ObjectType{
+class BlockPage extends ObjectType{
     public function __construct()
     {
         parent::__construct([
-            'name' => 'ContactPage',
+            'name' => 'BlockPage',
                             'interfaces' => function () {
                 return array_map(function ($interface) {
                     return call_user_func([__NAMESPACE__ . '\\Types', $interface]);
@@ -18,8 +18,7 @@ class ContactPage extends ObjectType{
   0 => 'DataObject',
   1 => 'SiteTreeInterface',
   2 => 'PageInterface',
-  3 => 'ContentPageInterface',
-  4 => 'ContactPageInterface',
+  3 => 'BlockPageInterface',
 ));
             },
         'fields' => function () {
@@ -506,80 +505,8 @@ class ContactPage extends ObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'bannerText',
-                        'type' => Types::String(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'bannerImageID',
+                        'name' => 'elementalAreaID',
                         'type' => Types::nonNull(Types::ID()),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'phoneNumber',
-                        'type' => Types::String(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'emailAddress',
-                        'type' => Types::String(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'physicalAddress',
-                        'type' => Types::String(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -614,8 +541,8 @@ class ContactPage extends ObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'bannerImage',
-                        'type' => Types::ImageInterface(),
+                        'name' => 'elementalArea',
+                        'type' => Types::ElementalArea(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [

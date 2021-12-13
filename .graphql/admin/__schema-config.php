@@ -14,6 +14,8 @@ return array (
       'type_prefix' => '',
       'type_mapping' => 
       array (
+        'DNADesign\\Elemental\\Models\\BaseElement' => 'Block',
+        'DNADesign\\Elemental\\Models\\ElementalArea' => 'ElementalArea',
       ),
       'base_fields' => 
       array (
@@ -156,11 +158,12 @@ return array (
   ),
   'resolvers' => 
   array (
-    0 => 'SilverStripe\\AssetAdmin\\GraphQL\\Resolvers\\AssetAdminResolver',
-    1 => 'SilverStripe\\AssetAdmin\\GraphQL\\Resolvers\\FileTypeResolver',
-    2 => 'SilverStripe\\AssetAdmin\\GraphQL\\Resolvers\\FolderTypeResolver',
-    3 => 'SilverStripe\\AssetAdmin\\GraphQL\\Resolvers\\PublicationResolver',
-    4 => 'SilverStripe\\CMS\\GraphQL\\Resolver',
+    0 => 'DNADesign\\Elemental\\GraphQL\\Resolvers\\Resolver',
+    1 => 'SilverStripe\\AssetAdmin\\GraphQL\\Resolvers\\AssetAdminResolver',
+    2 => 'SilverStripe\\AssetAdmin\\GraphQL\\Resolvers\\FileTypeResolver',
+    3 => 'SilverStripe\\AssetAdmin\\GraphQL\\Resolvers\\FolderTypeResolver',
+    4 => 'SilverStripe\\AssetAdmin\\GraphQL\\Resolvers\\PublicationResolver',
+    5 => 'SilverStripe\\CMS\\GraphQL\\Resolver',
   ),
   'execute' => 
   array (
@@ -168,12 +171,133 @@ return array (
   ),
   'typeMapping' => 
   array (
-    'Page' => 'Page',
+    'DNADesign\\Elemental\\Models\\BaseElement' => 'Block',
+    'DNADesign\\Elemental\\Models\\ElementalArea' => 'ElementalArea',
     'SilverStripe\\Security\\Member' => 'Member',
+    'Page' => 'Page',
     'SilverStripe\\CMS\\Model\\SiteTree' => 'SiteTree',
   ),
   'fieldMapping' => 
   array (
+    'Block' => 
+    array (
+      'id' => 
+      array (
+        0 => 'Block',
+        1 => 'ID',
+      ),
+      'lastEdited' => 
+      array (
+        0 => 'Block',
+        1 => 'LastEdited',
+      ),
+      'absoluteLink' => 
+      array (
+        0 => 'Block',
+        1 => 'absoluteLink',
+      ),
+      'title' => 
+      array (
+        0 => 'Block',
+        1 => 'Title',
+      ),
+      'showTitle' => 
+      array (
+        0 => 'Block',
+        1 => 'ShowTitle',
+      ),
+      'sort' => 
+      array (
+        0 => 'Block',
+        1 => 'Sort',
+      ),
+      'blockSchema' => 
+      array (
+        0 => 'Block',
+        1 => 'blockSchema',
+      ),
+      'isPublished' => 
+      array (
+        0 => 'Block',
+        1 => 'isPublished',
+      ),
+      'isLiveVersion' => 
+      array (
+        0 => 'Block',
+        1 => 'isLiveVersion',
+      ),
+      'canCreate' => 
+      array (
+        0 => 'Block',
+        1 => 'canCreate',
+      ),
+      'canPublish' => 
+      array (
+        0 => 'Block',
+        1 => 'canPublish',
+      ),
+      'canUnpublish' => 
+      array (
+        0 => 'Block',
+        1 => 'canUnpublish',
+      ),
+      'canDelete' => 
+      array (
+        0 => 'Block',
+        1 => 'canDelete',
+      ),
+      'version' => 
+      array (
+        0 => 'Block',
+        1 => 'Version',
+      ),
+      'versions' => 
+      array (
+        0 => 'Block',
+        1 => 'versions',
+      ),
+    ),
+    'ElementalArea' => 
+    array (
+      'id' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'ID',
+      ),
+      'elements' => 
+      array (
+        0 => 'Block',
+        1 => 'Elements',
+      ),
+      'version' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'Version',
+      ),
+      'versions' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'versions',
+      ),
+    ),
+    'Member' => 
+    array (
+      'id' => 
+      array (
+        0 => 'Member',
+        1 => 'ID',
+      ),
+      'firstName' => 
+      array (
+        0 => 'Member',
+        1 => 'FirstName',
+      ),
+      'surname' => 
+      array (
+        0 => 'Member',
+        1 => 'Surname',
+      ),
+    ),
     'Page' => 
     array (
       'id' => 
@@ -200,24 +324,6 @@ return array (
       array (
         0 => 'Page',
         1 => 'versions',
-      ),
-    ),
-    'Member' => 
-    array (
-      'id' => 
-      array (
-        0 => 'Member',
-        1 => 'ID',
-      ),
-      'firstName' => 
-      array (
-        0 => 'Member',
-        1 => 'FirstName',
-      ),
-      'surname' => 
-      array (
-        0 => 'Member',
-        1 => 'Surname',
       ),
     ),
     'SiteTree' => 

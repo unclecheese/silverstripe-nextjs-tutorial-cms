@@ -26,6 +26,21 @@ class ParentClassEnum extends EnumType
                         'SminneeApiKeyMemberApiKey' => [
                     'value' => 'Sminnee\\ApiKey\\MemberApiKey',
                                 ],
+                        'DNADesignElementalModelsBaseElement' => [
+                    'value' => 'DNADesign\\Elemental\\Models\\BaseElement',
+                                ],
+                        'DNADesignElementalModelsElementalArea' => [
+                    'value' => 'DNADesign\\Elemental\\Models\\ElementalArea',
+                                ],
+                        'DNADesignImagesModelsMultipleSizeImage' => [
+                    'value' => 'DNADesign\\Images\\Models\\MultipleSizeImage',
+                                ],
+                        'DNADesignImagesModelsSizedImage' => [
+                    'value' => 'DNADesign\\Images\\Models\\SizedImage',
+                                ],
+                        'gorriecoeLinkModelsLink' => [
+                    'value' => 'gorriecoe\\Link\\Models\\Link',
+                                ],
                         'SilverStripeAssetsShortcodesFileLink' => [
                     'value' => 'SilverStripe\\Assets\\Shortcodes\\FileLink',
                                 ],
@@ -89,14 +104,23 @@ class ParentClassEnum extends EnumType
                         'SilverStripeAssetsImage' => [
                     'value' => 'SilverStripe\\Assets\\Image',
                                 ],
+                        'DNADesignElementalModelsElementContent' => [
+                    'value' => 'DNADesign\\Elemental\\Models\\ElementContent',
+                                ],
+                        'DNADesignElementalBannerModelsElementBanner' => [
+                    'value' => 'DNADesign\\ElementalBanner\\Models\\ElementBanner',
+                                ],
+                        'SilverStripeElementalFileBlockBlockFileBlock' => [
+                    'value' => 'SilverStripe\\ElementalFileBlock\\Block\\FileBlock',
+                                ],
                         'Page' => [
                     'value' => 'Page',
                                 ],
-                        'AppModelsContactPage' => [
-                    'value' => 'App\\Models\\ContactPage',
+                        'AppModelsBlockPage' => [
+                    'value' => 'App\\Models\\BlockPage',
                                 ],
-                        'AppModelsHomePage' => [
-                    'value' => 'App\\Models\\HomePage',
+                        'AppModelsContentPage' => [
+                    'value' => 'App\\Models\\ContentPage',
                                 ],
                         'SilverStripeErrorPageErrorPage' => [
                     'value' => 'SilverStripe\\ErrorPage\\ErrorPage',
@@ -106,6 +130,9 @@ class ParentClassEnum extends EnumType
                                 ],
                         'SilverStripeCMSModelVirtualPage' => [
                     'value' => 'SilverStripe\\CMS\\Model\\VirtualPage',
+                                ],
+                        'AppModelsContactPage' => [
+                    'value' => 'App\\Models\\ContactPage',
                                 ],
                         'SilverStripeNextJSModelRecentPagesCollector' => [
                     'value' => 'SilverStripe\\NextJS\\Model\\RecentPagesCollector',

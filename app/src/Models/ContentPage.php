@@ -3,13 +3,13 @@
 
 namespace App\Models;
 
-use Page;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
+use Page;
 
-class HomePage extends Page
+class ContentPage extends Page
 {
     /**
      * @var array
@@ -29,17 +29,17 @@ class HomePage extends Page
     /**
      * @var string
      */
-    private static $table_name = 'HomePage';
+    private static $table_name = 'ContentPage';
 
     /**
      * @var string
      */
-    private static $singular_name = 'HomePage';
+    private static $singular_name = 'ContentPage';
 
     /**
      * @var string
      */
-    private static $plural_name = 'HomePages';
+    private static $plural_name = 'ContentPages';
 
     /**
      * @return FieldList
@@ -49,10 +49,9 @@ class HomePage extends Page
         $fields = parent::getCMSFields();
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('BannerText', 'Banner text'),
-            UploadField::create('BannerImage', 'Banner image')
-                ->setAllowedFileCategories('image')
+            UploadField::create('BannerIamge', 'Banner image')
+                ->setAllowedFileCategories('image'),
         ], 'Content');
-
         return $fields;
     }
 }

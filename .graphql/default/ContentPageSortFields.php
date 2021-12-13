@@ -6,11 +6,11 @@ namespace SSGraphQLSchema_c21f969b5f03d33d43e04f8f136e7682;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\InputObjectType;
 use SilverStripe\GraphQL\Schema\Resolver\ComposedResolver;
-class ContactPageFilterFields extends InputObjectType{
+class ContentPageSortFields extends InputObjectType{
     public function __construct()
     {
         parent::__construct([
-            'name' => 'ContactPageFilterFields',
+            'name' => 'ContentPageSortFields',
                 'fields' => function () {
                 $fields = [];
                                                         $resolverInst =     ComposedResolver::create([
@@ -19,7 +19,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'id',
-                        'type' => Types::QueryFilterIDComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -33,7 +33,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'className',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -47,7 +47,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'lastEdited',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -61,7 +61,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'created',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -75,7 +75,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'version',
-                        'type' => Types::QueryFilterIntComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -89,7 +89,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'urlSegment',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -103,7 +103,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'title',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -117,7 +117,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'menuTitle',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -131,7 +131,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'content',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -145,7 +145,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'metaDescription',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -159,7 +159,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'extraMeta',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -173,7 +173,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'showInMenus',
-                        'type' => Types::QueryFilterBooleanComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -187,7 +187,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'showInSearch',
-                        'type' => Types::QueryFilterBooleanComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -201,7 +201,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'sort',
-                        'type' => Types::QueryFilterIntComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -215,7 +215,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'parentID',
-                        'type' => Types::QueryFilterIDComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -229,7 +229,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'bannerText',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -243,49 +243,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'bannerImageID',
-                        'type' => Types::QueryFilterIDComparator(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'phoneNumber',
-                        'type' => Types::QueryFilterStringComparator(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'emailAddress',
-                        'type' => Types::QueryFilterStringComparator(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'physicalAddress',
-                        'type' => Types::QueryFilterStringComparator(),
+                        'type' => Types::SortDirection(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -299,7 +257,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'parent',
-                        'type' => Types::SiteTreeFilterFields(),
+                        'type' => Types::SiteTreeSortFields(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -313,7 +271,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'bannerImage',
-                        'type' => Types::ImageFilterFields(),
+                        'type' => Types::ImageSortFields(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -327,7 +285,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'viewerGroups',
-                        'type' => Types::GroupFilterFields(),
+                        'type' => Types::GroupSortFields(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -341,7 +299,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'editorGroups',
-                        'type' => Types::GroupFilterFields(),
+                        'type' => Types::GroupSortFields(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -355,7 +313,7 @@ class ContactPageFilterFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'navParent',
-                        'type' => Types::PageFilterFields(),
+                        'type' => Types::PageSortFields(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [

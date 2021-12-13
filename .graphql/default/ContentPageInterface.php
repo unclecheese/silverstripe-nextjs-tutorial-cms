@@ -5,7 +5,7 @@
 namespace SSGraphQLSchema_c21f969b5f03d33d43e04f8f136e7682;
 use GraphQL\Type\Definition\InterfaceType;
 use SilverStripe\GraphQL\Schema\Resolver\ComposedResolver;
-class HomePageInterface extends InterfaceType
+class ContentPageInterface extends InterfaceType
 {
     public function __construct()
     {
@@ -14,7 +14,7 @@ class HomePageInterface extends InterfaceType
         ])
 ;
         parent::__construct([
-            'name' => 'HomePageInterface',
+            'name' => 'ContentPageInterface',
             'resolveType' => function (...$args) use ($resolver) {
                 $type = call_user_func_array($resolver->toClosure(), $args);
                 return call_user_func([__NAMESPACE__ . '\\Types', $type]);

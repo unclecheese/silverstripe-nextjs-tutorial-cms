@@ -6,11 +6,11 @@ namespace SSGraphQLSchema_c21f969b5f03d33d43e04f8f136e7682;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\InputObjectType;
 use SilverStripe\GraphQL\Schema\Resolver\ComposedResolver;
-class ContactPageFilterFields extends InputObjectType{
+class LinkFilterFields extends InputObjectType{
     public function __construct()
     {
         parent::__construct([
-            'name' => 'ContactPageFilterFields',
+            'name' => 'LinkFilterFields',
                 'fields' => function () {
                 $fields = [];
                                                         $resolverInst =     ComposedResolver::create([
@@ -74,21 +74,7 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'version',
-                        'type' => Types::QueryFilterIntComparator(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'urlSegment',
+                        'name' => 'anchor',
                         'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -116,7 +102,7 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'menuTitle',
+                        'name' => 'type',
                         'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -130,7 +116,7 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'content',
+                        'name' => 'url',
                         'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -144,7 +130,7 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'metaDescription',
+                        'name' => 'email',
                         'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -158,7 +144,7 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'extraMeta',
+                        'name' => 'phone',
                         'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -172,7 +158,7 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'showInMenus',
+                        'name' => 'openInNewWindow',
                         'type' => Types::QueryFilterBooleanComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -186,8 +172,8 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'showInSearch',
-                        'type' => Types::QueryFilterBooleanComparator(),
+                        'name' => 'selectedStyle',
+                        'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -200,21 +186,7 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'sort',
-                        'type' => Types::QueryFilterIntComparator(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'parentID',
+                        'name' => 'siteTreeID',
                         'type' => Types::QueryFilterIDComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -228,21 +200,7 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'bannerText',
-                        'type' => Types::QueryFilterStringComparator(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'bannerImageID',
+                        'name' => 'fileID',
                         'type' => Types::QueryFilterIDComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -256,49 +214,7 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'phoneNumber',
-                        'type' => Types::QueryFilterStringComparator(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'emailAddress',
-                        'type' => Types::QueryFilterStringComparator(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'physicalAddress',
-                        'type' => Types::QueryFilterStringComparator(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'parent',
+                        'name' => 'siteTree',
                         'type' => Types::SiteTreeFilterFields(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
@@ -312,50 +228,8 @@ class ContactPageFilterFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'bannerImage',
-                        'type' => Types::ImageFilterFields(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'viewerGroups',
-                        'type' => Types::GroupFilterFields(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'editorGroups',
-                        'type' => Types::GroupFilterFields(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'navParent',
-                        'type' => Types::PageFilterFields(),
+                        'name' => 'file',
+                        'type' => Types::FileFilterFields(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [

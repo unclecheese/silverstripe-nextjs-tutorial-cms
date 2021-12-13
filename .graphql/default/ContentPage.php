@@ -6,11 +6,11 @@ namespace SSGraphQLSchema_c21f969b5f03d33d43e04f8f136e7682;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\InputObjectType;
 use SilverStripe\GraphQL\Schema\Resolver\ComposedResolver;
-class ContactPage extends ObjectType{
+class ContentPage extends ObjectType{
     public function __construct()
     {
         parent::__construct([
-            'name' => 'ContactPage',
+            'name' => 'ContentPage',
                             'interfaces' => function () {
                 return array_map(function ($interface) {
                     return call_user_func([__NAMESPACE__ . '\\Types', $interface]);
@@ -19,7 +19,6 @@ class ContactPage extends ObjectType{
   1 => 'SiteTreeInterface',
   2 => 'PageInterface',
   3 => 'ContentPageInterface',
-  4 => 'ContactPageInterface',
 ));
             },
         'fields' => function () {
@@ -526,60 +525,6 @@ class ContactPage extends ObjectType{
                     $fields[] = [
                         'name' => 'bannerImageID',
                         'type' => Types::nonNull(Types::ID()),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'phoneNumber',
-                        'type' => Types::String(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'emailAddress',
-                        'type' => Types::String(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-                                ],
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\DataObject\Resolver', 'resolve'],
-            ['SilverStripe\GraphQL\Schema\DataObject\Plugin\ScalarDBField', 'resolve'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'physicalAddress',
-                        'type' => Types::String(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [

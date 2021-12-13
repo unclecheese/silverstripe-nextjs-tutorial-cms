@@ -14,6 +14,81 @@ class Mutation extends ObjectType{
                 'fields' => function () {
                 $fields = [];
                                                         $resolverInst =     ComposedResolver::create([
+            ['DNADesign\Elemental\GraphQL\Resolvers\Resolver', 'resolveAddElementToArea'],
+        ])
+;
+                    $fields[] = [
+                        'name' => 'addElementToArea',
+                        'type' => Types::Block(),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['DNADesign\Elemental\GraphQL\Resolvers\Resolver', 'resolveAddElementToArea'],
+                                ],
+                                                    ],
+                                            'description' => 'Adds an Element to an ElementalArea, optionally after another Element',
+                                                                'args' => [
+                                                    [
+                                'name' => 'className',
+                                'type' => Types::nonNull(Types::String()),
+                                                        ], // arg
+                                                    [
+                                'name' => 'elementalAreaID',
+                                'type' => Types::nonNull(Types::ID()),
+                                                        ], // arg
+                                                    [
+                                'name' => 'afterElementID',
+                                'type' => Types::ID(),
+                                                        ], // arg
+                                                ], // args
+                                        ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            ['DNADesign\Elemental\GraphQL\Resolvers\Resolver', 'resolveDuplicateBlock'],
+        ])
+;
+                    $fields[] = [
+                        'name' => 'duplicateBlock',
+                        'type' => Types::Block(),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['DNADesign\Elemental\GraphQL\Resolvers\Resolver', 'resolveDuplicateBlock'],
+                                ],
+                                                    ],
+                                            'description' => 'Duplicate an Element in this ElementalArea',
+                                                                'args' => [
+                                                    [
+                                'name' => 'id',
+                                'type' => Types::nonNull(Types::ID()),
+                                                        ], // arg
+                                                ], // args
+                                        ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            ['DNADesign\Elemental\GraphQL\Resolvers\Resolver', 'resolveSortBlock'],
+        ])
+;
+                    $fields[] = [
+                        'name' => 'sortBlock',
+                        'type' => Types::Block(),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['DNADesign\Elemental\GraphQL\Resolvers\Resolver', 'resolveSortBlock'],
+                                ],
+                                                    ],
+                                            'description' => 'Changes the sort position of an element',
+                                                                'args' => [
+                                                    [
+                                'name' => 'id',
+                                'type' => Types::nonNull(Types::ID()),
+                                                        ], // arg
+                                                    [
+                                'name' => 'afterBlockID',
+                                'type' => Types::nonNull(Types::ID()),
+                                                        ], // arg
+                                                ], // args
+                                        ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
             ['SilverStripe\AssetAdmin\GraphQL\Resolvers\AssetAdminResolver', 'resolveCreateFile'],
         ])
 ;
@@ -180,6 +255,102 @@ class Mutation extends ObjectType{
                                                     [
                                 'name' => 'file',
                                 'type' => Types::FileInput(),
+                                                        ], // arg
+                                                ], // args
+                                        ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            call_user_func_array(['SilverStripe\Versioned\GraphQL\Resolvers\VersionedResolver', 'resolveCopyToStage'], [array (
+  'dataClass' => 'DNADesign\\Elemental\\Models\\BaseElement',
+)]),
+        ])
+;
+                    $fields[] = [
+                        'name' => 'copyBlockToStage',
+                        'type' => Types::Block(),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['SilverStripe\Versioned\GraphQL\Resolvers\VersionedResolver', 'resolveCopyToStage'],
+                                ],
+                                                    ],
+                                                                'args' => [
+                                                    [
+                                'name' => 'input',
+                                'type' => Types::nonNull(Types::CopyToStageInputType()),
+                                                        ], // arg
+                                                ], // args
+                                        ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            call_user_func_array(['SilverStripe\Versioned\GraphQL\Plugins\UnpublishOnDelete', 'unpublishOnDelete'], [array (
+  'dataClass' => 'DNADesign\\Elemental\\Models\\BaseElement',
+)]),
+            call_user_func_array(['SilverStripe\GraphQL\Schema\DataObject\DeleteCreator', 'resolve'], [array (
+  'dataClass' => 'DNADesign\\Elemental\\Models\\BaseElement',
+)]),
+        ])
+;
+                    $fields[] = [
+                        'name' => 'deleteBlocks',
+                        'type' => Types::listOf(Types::ID()),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['SilverStripe\Versioned\GraphQL\Plugins\UnpublishOnDelete', 'unpublishOnDelete'],
+                                ],
+                                                            [
+                                    ['SilverStripe\GraphQL\Schema\DataObject\DeleteCreator', 'resolve'],
+                                ],
+                                                    ],
+                                                                'args' => [
+                                                    [
+                                'name' => 'ids',
+                                'type' => Types::nonNull(Types::listOf(Types::ID())),
+                                                        ], // arg
+                                                ], // args
+                                        ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            call_user_func_array(['SilverStripe\Versioned\GraphQL\Resolvers\VersionedResolver', 'resolvePublishOperation'], [array (
+  'action' => 'publish',
+  'dataClass' => 'DNADesign\\Elemental\\Models\\BaseElement',
+)]),
+        ])
+;
+                    $fields[] = [
+                        'name' => 'publishBlock',
+                        'type' => Types::Block(),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['SilverStripe\Versioned\GraphQL\Resolvers\VersionedResolver', 'resolvePublishOperation'],
+                                ],
+                                                    ],
+                                                                'args' => [
+                                                    [
+                                'name' => 'id',
+                                'type' => Types::nonNull(Types::ID()),
+                                                        ], // arg
+                                                ], // args
+                                        ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            call_user_func_array(['SilverStripe\Versioned\GraphQL\Resolvers\VersionedResolver', 'resolvePublishOperation'], [array (
+  'action' => 'unpublish',
+  'dataClass' => 'DNADesign\\Elemental\\Models\\BaseElement',
+)]),
+        ])
+;
+                    $fields[] = [
+                        'name' => 'unpublishBlock',
+                        'type' => Types::Block(),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['SilverStripe\Versioned\GraphQL\Resolvers\VersionedResolver', 'resolvePublishOperation'],
+                                ],
+                                                    ],
+                                                                'args' => [
+                                                    [
+                                'name' => 'id',
+                                'type' => Types::nonNull(Types::ID()),
                                                         ], // arg
                                                 ], // args
                                         ]; // field

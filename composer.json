@@ -2,6 +2,12 @@
     "name": "silverstripe/installer",
     "type": "silverstripe-recipe",
     "description": "The SilverStripe Framework Installer",
+    "repositories": {
+        "gorriecoe/silverstripe-link": {
+            "type": "git",
+            "url": "git@github.com:/silverstripeltd/silverstripe-link"
+        }
+    },
     "require": {
         "php": "^7.3 || ^8.0",
         "silverstripe/recipe-plugin": "^1.2",
@@ -9,7 +15,11 @@
         "silverstripe-themes/simple": "~3.2.0",
         "silverstripe/login-forms": "~4.6.0@beta",
         "silverstripe/graphql": "4.0.0-alpha3",
-        "silverstripe/silverstripe-nextjs": "dev-main"
+        "silverstripe/silverstripe-nextjs": "dev-main",
+        "dnadesign/silverstripe-elemental": "^4.7",
+        "dnadesign/silverstripe-elemental-banner": "^0.6.1",
+        "silverstripe/elemental-fileblock": "^2.2",
+        "gorriecoe/silverstripe-link":"dev-feature/upgrade-graphql-4 as 1.3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",

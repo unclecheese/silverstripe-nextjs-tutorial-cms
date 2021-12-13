@@ -6,11 +6,11 @@ namespace SSGraphQLSchema_c21f969b5f03d33d43e04f8f136e7682;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\InputObjectType;
 use SilverStripe\GraphQL\Schema\Resolver\ComposedResolver;
-class HomePageSortFields extends InputObjectType{
+class BaseElementFilterFields extends InputObjectType{
     public function __construct()
     {
         parent::__construct([
-            'name' => 'HomePageSortFields',
+            'name' => 'BaseElementFilterFields',
                 'fields' => function () {
                 $fields = [];
                                                         $resolverInst =     ComposedResolver::create([
@@ -19,7 +19,7 @@ class HomePageSortFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'id',
-                        'type' => Types::SortDirection(),
+                        'type' => Types::QueryFilterIDComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -33,7 +33,7 @@ class HomePageSortFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'className',
-                        'type' => Types::SortDirection(),
+                        'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -47,7 +47,7 @@ class HomePageSortFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'lastEdited',
-                        'type' => Types::SortDirection(),
+                        'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -61,7 +61,7 @@ class HomePageSortFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'created',
-                        'type' => Types::SortDirection(),
+                        'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -75,21 +75,7 @@ class HomePageSortFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'version',
-                        'type' => Types::SortDirection(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'urlSegment',
-                        'type' => Types::SortDirection(),
+                        'type' => Types::QueryFilterIntComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -103,7 +89,7 @@ class HomePageSortFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'title',
-                        'type' => Types::SortDirection(),
+                        'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -116,78 +102,8 @@ class HomePageSortFields extends InputObjectType{
         ])
 ;
                     $fields[] = [
-                        'name' => 'menuTitle',
-                        'type' => Types::SortDirection(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'content',
-                        'type' => Types::SortDirection(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'metaDescription',
-                        'type' => Types::SortDirection(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'extraMeta',
-                        'type' => Types::SortDirection(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'showInMenus',
-                        'type' => Types::SortDirection(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'showInSearch',
-                        'type' => Types::SortDirection(),
+                        'name' => 'showTitle',
+                        'type' => Types::QueryFilterBooleanComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -201,7 +117,35 @@ class HomePageSortFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'sort',
-                        'type' => Types::SortDirection(),
+                        'type' => Types::QueryFilterIntComparator(),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
+                                ],
+                                                    ],
+                                                            ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
+        ])
+;
+                    $fields[] = [
+                        'name' => 'extraClass',
+                        'type' => Types::QueryFilterStringComparator(),
+                        'resolve' => $resolverInst->toClosure(),
+                        'resolverComposition' => [
+                                                            [
+                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
+                                ],
+                                                    ],
+                                                            ]; // field
+                                                        $resolverInst =     ComposedResolver::create([
+            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
+        ])
+;
+                    $fields[] = [
+                        'name' => 'style',
+                        'type' => Types::QueryFilterStringComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -215,35 +159,7 @@ class HomePageSortFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'parentID',
-                        'type' => Types::SortDirection(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'bannerText',
-                        'type' => Types::SortDirection(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'bannerImageID',
-                        'type' => Types::SortDirection(),
+                        'type' => Types::QueryFilterIDComparator(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [
@@ -257,63 +173,7 @@ class HomePageSortFields extends InputObjectType{
 ;
                     $fields[] = [
                         'name' => 'parent',
-                        'type' => Types::SiteTreeSortFields(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'bannerImage',
-                        'type' => Types::ImageSortFields(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'viewerGroups',
-                        'type' => Types::GroupSortFields(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'editorGroups',
-                        'type' => Types::GroupSortFields(),
-                        'resolve' => $resolverInst->toClosure(),
-                        'resolverComposition' => [
-                                                            [
-                                    ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-                                ],
-                                                    ],
-                                                            ]; // field
-                                                        $resolverInst =     ComposedResolver::create([
-            ['SilverStripe\GraphQL\Schema\Resolver\DefaultResolver', 'defaultFieldResolver'],
-        ])
-;
-                    $fields[] = [
-                        'name' => 'navParent',
-                        'type' => Types::PageSortFields(),
+                        'type' => Types::ElementalAreaFilterFields(),
                         'resolve' => $resolverInst->toClosure(),
                         'resolverComposition' => [
                                                             [

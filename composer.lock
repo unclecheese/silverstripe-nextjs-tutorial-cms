@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3201ed953c73ae0c9d22d2214d87b223",
+    "content-hash": "aa2a902afee0206abbf1c39f379dfbb2",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -95,6 +95,51 @@
                 "source": "https://github.com/bramus/monolog-colored-line-formatter/tree/master"
             },
             "time": "2015-01-07T22:12:35+00:00"
+        },
+        {
+            "name": "chrometoaster/silverstripe-image-quality",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chrometoasters/silverstripe-image-quality.git",
+                "reference": "1ec40bc90d6c8b910396547cf48bb66db0e8b1ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chrometoasters/silverstripe-image-quality/zipball/1ec40bc90d6c8b910396547cf48bb66db0e8b1ce",
+                "reference": "1ec40bc90d6c8b910396547cf48bb66db0e8b1ce",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "^4"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "Chrometoaster\\ImageQuality\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Chrometoaster",
+                    "homepage": "https://www.chrometoaster.com/"
+                }
+            ],
+            "description": "Adds Quality function to images",
+            "keywords": [
+                "image",
+                "quality",
+                "silverstripe"
+            ],
+            "support": {
+                "issues": "https://github.com/chrometoasters/silverstripe-image-quality/issues",
+                "source": "https://github.com/chrometoasters/silverstripe-image-quality/tree/1.0.2"
+            },
+            "time": "2018-07-11T09:28:18+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -405,6 +450,177 @@
             "time": "2021-10-25T11:34:17+00:00"
         },
         {
+            "name": "dnadesign/silverstripe-elemental",
+            "version": "4.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-elemental.git",
+                "reference": "17d714826de6eb0d8e74f08c44994ba456be8673"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-elemental/zipball/17d714826de6eb0d8e74f08c44994ba456be8673",
+                "reference": "17d714826de6eb0d8e74f08c44994ba456be8673",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "silverstripe/admin": "^1.7@dev",
+                "silverstripe/cms": "^4.7@dev",
+                "silverstripe/graphql": "^3.5 || ^4",
+                "silverstripe/vendor-plugin": "^1",
+                "silverstripe/versioned": "^1.7@dev",
+                "silverstripe/versioned-admin": "^1.7@dev",
+                "symbiote/silverstripe-gridfieldextensions": "^3.1"
+            },
+            "require-dev": {
+                "silverstripe/recipe-testing": "1.x-dev"
+            },
+            "suggest": {
+                "dnadesign/silverstripe-elemental-subsites": "Adds subsite support to elemental",
+                "dnadesign/silverstripe-elemental-userforms": "Adds userform support to elemental",
+                "dnadesign/silverstripe-elemental-virtual": "Adds support to share blocks between pages",
+                "silverstripe/elemental-blocks": "Adds a set of common SilverStripe content block types",
+                "silverstripe/fulltextsearch": "Adds fulltext search capability for elements using Solr"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "client/dist",
+                    "client/lang"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "DNADesign\\Elemental\\": [
+                        "src/",
+                        "_legacy/"
+                    ],
+                    "DNADesign\\Elemental\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexandre Saelens",
+                    "email": "alexandre.saelens@dna.co.nz"
+                }
+            ],
+            "description": "Elemental pagetype and collection of Elements",
+            "keywords": [
+                "Content Blocks",
+                "element",
+                "elemental",
+                "silverstripe"
+            ],
+            "support": {
+                "issues": "https://github.com/silverstripe/silverstripe-elemental/issues",
+                "source": "https://github.com/silverstripe/silverstripe-elemental/tree/4.7.1"
+            },
+            "time": "2021-10-07T21:21:13+00:00"
+        },
+        {
+            "name": "dnadesign/silverstripe-elemental-banner",
+            "version": "0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dnadesign/silverstripe-elemental-banner.git",
+                "reference": "b5faa24f55ee7b1d877e2b0f80c5a98acf904405"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dnadesign/silverstripe-elemental-banner/zipball/b5faa24f55ee7b1d877e2b0f80c5a98acf904405",
+                "reference": "b5faa24f55ee7b1d877e2b0f80c5a98acf904405",
+                "shasum": ""
+            },
+            "require": {
+                "dnadesign/silverstripe-elemental": "^4.3",
+                "dnadesign/silverstripe-lazyloaded-image": "^0.5.0",
+                "gorriecoe/silverstripe-link": "^1.2.4",
+                "silvershop/silverstripe-hasonefield": "^3",
+                "silverstripe/vendor-plugin": "^1.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "silverstripe-elemental-banner",
+                "expose": [
+                    "client"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "DNADesign\\Elemental\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "A hero banner with responsive image and optional title, content and link",
+            "keywords": [
+                "banner",
+                "elemental",
+                "hero",
+                "silverstripe"
+            ],
+            "support": {
+                "issues": "https://github.com/dnadesign/silverstripe-elemental-banner/issues",
+                "source": "https://github.com/dnadesign/silverstripe-elemental-banner/tree/0.6.1"
+            },
+            "time": "2019-11-20T03:10:01+00:00"
+        },
+        {
+            "name": "dnadesign/silverstripe-lazyloaded-image",
+            "version": "0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dnadesign/silverstripe-lazyloaded-image.git",
+                "reference": "c1a7056ec08ac9361401d38dd36ffd6d59b35a79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dnadesign/silverstripe-lazyloaded-image/zipball/c1a7056ec08ac9361401d38dd36ffd6d59b35a79",
+                "reference": "c1a7056ec08ac9361401d38dd36ffd6d59b35a79",
+                "shasum": ""
+            },
+            "require": {
+                "chrometoaster/silverstripe-image-quality": "~1.0",
+                "silverstripe/framework": "^4.0",
+                "silverstripe/vendor-plugin": "^1.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "silverstripe-lazyloaded-image",
+                "expose": [
+                    "client"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "DNADesign\\Images\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Implements the LQIP (Low Quality Image Placeholder) pattern powered by lazysizes",
+            "keywords": [
+                "image",
+                "lazyload",
+                "lazysizes",
+                "silverstripe"
+            ],
+            "support": {
+                "issues": "https://github.com/dnadesign/silverstripe-lazyloaded-image/issues",
+                "source": "https://github.com/dnadesign/silverstripe-lazyloaded-image/tree/master"
+            },
+            "time": "2019-04-22T09:46:10+00:00"
+        },
+        {
             "name": "doctrine/lexer",
             "version": "1.2.1",
             "source": {
@@ -669,17 +885,178 @@
             "time": "2021-11-08T20:18:51+00:00"
         },
         {
-            "name": "guzzlehttp/guzzle",
-            "version": "7.4.0",
+            "name": "giggsey/libphonenumber-for-php",
+            "version": "8.12.39",
             "source": {
                 "type": "git",
-                "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "868b3571a039f0ebc11ac8f344f4080babe2cb94"
+                "url": "https://github.com/giggsey/libphonenumber-for-php.git",
+                "reference": "6ae517989e96f069141ffeb56ccbbd849520f6ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/868b3571a039f0ebc11ac8f344f4080babe2cb94",
-                "reference": "868b3571a039f0ebc11ac8f344f4080babe2cb94",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/6ae517989e96f069141ffeb56ccbbd849520f6ff",
+                "reference": "6ae517989e96f069141ffeb56ccbbd849520f6ff",
+                "shasum": ""
+            },
+            "require": {
+                "giggsey/locale": "^1.7|^2.0",
+                "php": ">=5.3.2",
+                "symfony/polyfill-mbstring": "^1.17"
+            },
+            "require-dev": {
+                "pear/pear-core-minimal": "^1.9",
+                "pear/pear_exception": "^1.0",
+                "pear/versioncontrol_git": "^0.5",
+                "phing/phing": "^2.7",
+                "php-coveralls/php-coveralls": "^1.0|^2.0",
+                "symfony/console": "^2.8|^3.0|^v4.4|^v5.2",
+                "symfony/phpunit-bridge": "^4.2 || ^5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "libphonenumber\\": "src/"
+                },
+                "exclude-from-classmap": [
+                    "/src/data/",
+                    "/src/carrier/data/",
+                    "/src/geocoding/data/",
+                    "/src/timezone/data/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Joshua Gigg",
+                    "email": "giggsey@gmail.com",
+                    "homepage": "https://giggsey.com/"
+                }
+            ],
+            "description": "PHP Port of Google's libphonenumber",
+            "homepage": "https://github.com/giggsey/libphonenumber-for-php",
+            "keywords": [
+                "geocoding",
+                "geolocation",
+                "libphonenumber",
+                "mobile",
+                "phonenumber",
+                "validation"
+            ],
+            "support": {
+                "irc": "irc://irc.appliedirc.com/lobby",
+                "issues": "https://github.com/giggsey/libphonenumber-for-php/issues",
+                "source": "https://github.com/giggsey/libphonenumber-for-php"
+            },
+            "time": "2021-12-07T08:51:54+00:00"
+        },
+        {
+            "name": "giggsey/locale",
+            "version": "2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/giggsey/Locale.git",
+                "reference": "8d324583b5899e6280a875c43bf1fc9658bc6962"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/giggsey/Locale/zipball/8d324583b5899e6280a875c43bf1fc9658bc6962",
+                "reference": "8d324583b5899e6280a875c43bf1fc9658bc6962",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "pear/pear-core-minimal": "^1.9",
+                "pear/pear_exception": "^1.0",
+                "pear/versioncontrol_git": "^0.5",
+                "phing/phing": "^2.7",
+                "php-coveralls/php-coveralls": "^2.0",
+                "phpunit/phpunit": "^8.5|^9.5",
+                "symfony/console": "^5.0",
+                "symfony/filesystem": "^5.0",
+                "symfony/finder": "^5.0",
+                "symfony/process": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Giggsey\\Locale\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joshua Gigg",
+                    "email": "giggsey@gmail.com",
+                    "homepage": "https://giggsey.com/"
+                }
+            ],
+            "description": "Locale functions required by libphonenumber-for-php",
+            "support": {
+                "issues": "https://github.com/giggsey/Locale/issues",
+                "source": "https://github.com/giggsey/Locale/tree/2.1"
+            },
+            "time": "2021-11-04T19:12:22+00:00"
+        },
+        {
+            "name": "gorriecoe/silverstripe-link",
+            "version": "dev-feature/upgrade-graphql-4",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:/silverstripeltd/silverstripe-link",
+                "reference": "d07a22ad60e79864ac6a0913d19bd5bdec10de72"
+            },
+            "require": {
+                "giggsey/libphonenumber-for-php": "^8.0",
+                "silverstripe/framework": "^4",
+                "unclecheese/display-logic": "^2"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "link"
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Gorrie Coe",
+                    "email": "gorriecoe@gmail.com"
+                }
+            ],
+            "description": "Adds a Link Object that can be link to a URL, Email, Phone number, an internal Page or File.",
+            "homepage": "https://gorriecoe.github.io/silverstripe-link/en/",
+            "keywords": [
+                "link",
+                "silverstripe"
+            ],
+            "time": "2021-09-27T03:15:32+00:00"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "7.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "ee0a041b1760e6a53d2a39c8c34115adc2af2c79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ee0a041b1760e6a53d2a39c8c34115adc2af2c79",
+                "reference": "ee0a041b1760e6a53d2a39c8c34115adc2af2c79",
                 "shasum": ""
             },
             "require": {
@@ -688,7 +1065,7 @@
                 "guzzlehttp/psr7": "^1.8.3 || ^2.1",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
-                "symfony/deprecation-contracts": "^2.2"
+                "symfony/deprecation-contracts": "^2.2 || ^3.0"
             },
             "provide": {
                 "psr/http-client-implementation": "1.0"
@@ -774,7 +1151,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.4.0"
+                "source": "https://github.com/guzzle/guzzle/tree/7.4.1"
             },
             "funding": [
                 {
@@ -790,7 +1167,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-18T09:52:00+00:00"
+            "time": "2021-12-06T18:43:05+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1161,16 +1538,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.1.8",
+            "version": "1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "c995bb0c23c58c9813d081f9523c9b7bb496698e"
+                "reference": "094defdb4a7001845300334e7c1ee2335925ef99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c995bb0c23c58c9813d081f9523c9b7bb496698e",
-                "reference": "c995bb0c23c58c9813d081f9523c9b7bb496698e",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/094defdb4a7001845300334e7c1ee2335925ef99",
+                "reference": "094defdb4a7001845300334e7c1ee2335925ef99",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1620,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/1.1.8"
+                "source": "https://github.com/thephpleague/flysystem/tree/1.1.9"
             },
             "funding": [
                 {
@@ -1251,7 +1628,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-11-28T21:50:23+00:00"
+            "time": "2021-12-09T09:40:50+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -2028,6 +2405,61 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
+            "name": "silvershop/silverstripe-hasonefield",
+            "version": "3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silvershop/silverstripe-hasonefield.git",
+                "reference": "478a13d73759ab026fbb9177d0f771dfa4679277"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silvershop/silverstripe-hasonefield/zipball/478a13d73759ab026fbb9177d0f771dfa4679277",
+                "reference": "478a13d73759ab026fbb9177d0f771dfa4679277",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "^4.0",
+                "silverstripe/vendor-plugin": "^1.0"
+            },
+            "replace": {
+                "hchokshi/silverstripe-hasonefield": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                },
+                "expose": [
+                    "client"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "SilverShop\\HasOneField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Shipman",
+                    "email": "jeremy@burnbright.net"
+                }
+            ],
+            "description": "Edit a has_one relationship using a GridField, triggered by clicking a button.",
+            "support": {
+                "issues": "https://github.com/silvershop/silverstripe-hasonefield/issues",
+                "source": "https://github.com/silvershop/silverstripe-hasonefield/tree/master"
+            },
+            "time": "2020-07-30T20:54:18+00:00"
+        },
+        {
             "name": "silverstripe-themes/simple",
             "version": "3.2.1",
             "source": {
@@ -2506,6 +2938,55 @@
                 "source": "https://github.com/silverstripe/silverstripe-config/tree/1.3.0-beta1"
             },
             "time": "2021-10-27T10:34:38+00:00"
+        },
+        {
+            "name": "silverstripe/elemental-fileblock",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-elemental-fileblock.git",
+                "reference": "3bec9e0b92bb0ad92cc1f133223e787f2b4c5cb9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-elemental-fileblock/zipball/3bec9e0b92bb0ad92cc1f133223e787f2b4c5cb9",
+                "reference": "3bec9e0b92bb0ad92cc1f133223e787f2b4c5cb9",
+                "shasum": ""
+            },
+            "require": {
+                "dnadesign/silverstripe-elemental": "^4@dev",
+                "php": "^7.1 || ^8.0",
+                "silverstripe/assets": "^1.3",
+                "silverstripe/cms": "^4.3",
+                "silverstripe/vendor-plugin": "^1.0"
+            },
+            "require-dev": {
+                "sminnee/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "SilverStripe\\ElementalFileBlock\\": "src/",
+                    "SilverStripe\\ElementalFileBlock\\Tests\\": "tests/",
+                    "SilverStripe\\ElementalFileBlock\\Tests\\Behat\\Context\\": "tests/behat/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "A file block for the silverstripe-elemental module",
+            "keywords": [
+                "Content Blocks",
+                "elemental",
+                "silverstripe"
+            ],
+            "support": {
+                "issues": "https://github.com/silverstripe/silverstripe-elemental-fileblock/issues",
+                "source": "https://github.com/silverstripe/silverstripe-elemental-fileblock/tree/2.2.1"
+            },
+            "time": "2021-11-10T03:52:57+00:00"
         },
         {
             "name": "silverstripe/errorpage",
@@ -6150,16 +6631,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.14.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e"
+                "reference": "bbcd7380b0ebf3961ee21409db7b38bc31d69a13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
-                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/bbcd7380b0ebf3961ee21409db7b38bc31d69a13",
+                "reference": "bbcd7380b0ebf3961ee21409db7b38bc31d69a13",
                 "shasum": ""
             },
             "require": {
@@ -6211,22 +6692,22 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/1.14.0"
+                "source": "https://github.com/phpspec/prophecy/tree/v1.15.0"
             },
-            "time": "2021-09-10T09:02:12+00:00"
+            "time": "2021-12-08T12:19:24+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.9",
+            "version": "9.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "f301eb1453c9e7a1bc912ee8b0ea9db22c60223b"
+                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f301eb1453c9e7a1bc912ee8b0ea9db22c60223b",
-                "reference": "f301eb1453c9e7a1bc912ee8b0ea9db22c60223b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d5850aaf931743067f4bfc1ae4cbd06468400687",
+                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687",
                 "shasum": ""
             },
             "require": {
@@ -6282,7 +6763,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.9"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.10"
             },
             "funding": [
                 {
@@ -6290,7 +6771,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-19T15:21:02+00:00"
+            "time": "2021-12-05T09:12:13+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -7749,12 +8230,20 @@
             "time": "2021-03-09T10:59:23+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "gorriecoe/silverstripe-link",
+            "version": "dev-feature/upgrade-graphql-4",
+            "alias": "1.3.0",
+            "alias_normalized": "1.3.0.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "silverstripe/recipe-cms": 10,
         "silverstripe/login-forms": 10,
         "silverstripe/silverstripe-nextjs": 20,
+        "gorriecoe/silverstripe-link": 20,
         "silverstripe/graphql-devtools": 20
     },
     "prefer-stable": true,
