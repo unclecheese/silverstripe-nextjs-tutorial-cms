@@ -49,7 +49,7 @@ class ContentPage extends Page
         $fields = parent::getCMSFields();
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('BannerText', 'Banner text'),
-            UploadField::create('BannerIamge', 'Banner image')
+            UploadField::create('BannerImage', 'Banner image')
                 ->setAllowedFileCategories('image'),
         ], 'Content');
         return $fields;

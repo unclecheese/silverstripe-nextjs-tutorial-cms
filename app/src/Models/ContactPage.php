@@ -3,7 +3,6 @@
 
 namespace App\Models;
 
-use Page;
 use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
